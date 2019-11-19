@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import AllPosts from './pages/allPosts';
+
 import HomePage from './pages/main';
 import {
   BrowserRouter as Router,
@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import { AllPosts } from './pages/allPosts';
 
 function App() {
   return (
@@ -34,20 +35,20 @@ function App() {
         </nav>
         <Switch>
           <Route path='/' exact>
-          <HomePage />
+            <HomePage />
           </Route>
           <Route path='/allPosts'>
             <AllPosts />
           </Route>
-          <Route path='/createPost'>
+          {/* <Route path='/createPost'>
             
           </Route>
           <Route path='/allUsers'>
             {/* <AllUsers /> */}
-          </Route>
+          {/* </Route>
           <Route path='/createUser'>
             {/* <CreateUser /> */}
-          </Route>
+          {/* </Route> */}
         </Switch>
       </div>
     </Router>
