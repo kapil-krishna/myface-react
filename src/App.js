@@ -1,5 +1,10 @@
 import React from 'react';
 import './App.scss';
+import { AllPosts, NewPostLink } from './pages/allPosts';
+import { AllUsers, NewUserLink } from './pages/allUsers';
+import { PostForm } from './pages/createPost';
+import { UserForm } from './pages/createUser';
+import crazy from './resources/images/crazy.png';
 
 import HomePage from './pages/main';
 import {
@@ -8,28 +13,23 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { AllPosts } from './pages/allPosts';
+
 
 function App() {
   return (
     <Router>
       <div>
+      <p className="nav-title"><img src={crazy} className ="nav-logo"/>MyFace</p>
         <nav>
-          <ul>
+            <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">HOME</Link>
             </li>
             <li>
-              <Link to='/allPosts'>All posts</Link>
+              <Link to='/allPosts'>POSTS</Link>
             </li>
             <li>
-              <Link to='/createPost'>Create a post</Link>
-            </li>
-            <li>
-              <Link to='/allUsers'>All users</Link>
-            </li>
-            <li>
-              <Link to='/createUser'>Create a user</Link>
+              <Link to='/allUsers'>USERS</Link>
             </li>
           </ul>
         </nav>
@@ -38,17 +38,17 @@ function App() {
             <HomePage />
           </Route>
           <Route path='/allPosts'>
-            <AllPosts />
-          </Route>
-          {/* <Route path='/createPost'>
-            
+            <NewPostLink /> <AllPosts />
           </Route>
           <Route path='/allUsers'>
-            {/* <AllUsers /> */}
-          {/* </Route>
+            <NewUserLink /> <AllUsers />
+          </Route>
+          <Route path='/createPost' >
+            <PostForm />
+          </Route>
           <Route path='/createUser'>
-            {/* <CreateUser /> */}
-          {/* </Route> */}
+            <UserForm />
+          </Route>
         </Switch>
       </div>
     </Router>

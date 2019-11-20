@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 export function Post(props) {
     return (
         <div>
-        <div>{props.data.postedAt}</div>
-        <div>{props.data.sender.username}@{props.data.receiver.username}</div>
-        <div>{props.data.image}</div>
-        <div>{props.data.message}</div>
+        <div className="date">{props.data.postedAt}</div>
+        <br></br>
+        <div className="users">{props.data.sender.username}@{props.data.receiver.username}</div>
+        <div className="postImage"><img src={props.data.image} alt="postImage"/></div>
+        <div className="postMessage">{props.data.message}</div>
         </div>
     )
 }

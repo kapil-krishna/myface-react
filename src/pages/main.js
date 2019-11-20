@@ -1,11 +1,12 @@
 import React from 'react';
 import smiley from './smiley.png';
+import crazy from '../resources/images/crazy.png';
 
 function HomePage() {
     return (
-        <div className="App">
+        <div className="main">
             <header className="App-header">
-            <img src={smiley} className="App-logo" alt="logo" />
+            <img src={crazy} className="main-logo" alt="logo" />
             <p>
                 Welcome to MyFace!
             </p>

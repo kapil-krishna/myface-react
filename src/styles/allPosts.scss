@@ -1,4 +1,28 @@
-.AllPosts-ul {
+.AllPosts {
+    border-style: solid;
     list-style: none;
     color: midnightblue;
+}
+
+ul {
+    list-style: none;
+}
+
+.NewPostLink {
+    margin: right;
+}
+
+.postList li {
+    flex: wrap;
+    border-style: solid;
+    margin: 15px;
+    
+}
+
+.users {
+    font-weight: bold;
+}
+
+.postImage {
+    display: inline-flex;
 }
