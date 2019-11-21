@@ -11,40 +11,37 @@ const INITIAL_STATE = {
 }
 
 export function PostForm() {
-    const {handleSubmit, handleChange, values, handleBlur, errors, isSubmitting} = UseFormValidation(INITIAL_STATE, ValidatePostFields);
+    const {handleSubmit, handleChange, values, errors, isSubmitting} = UseFormValidation(INITIAL_STATE, ValidatePostFields);
 
     return (
         <div className="PostForm">
+        {isSubmitting && <div>Is Submitting</div>}
             <h1>Create a post</h1>
         <form onSubmit={handleSubmit}>
             <label> 
                 From:
                 <br></br>
                 <input
-                    name="from"
+                    name="senderId"
                     type="text"
-                    value={values.from}
-                    autoComplete="off"
+                    values={values.senderId}
                     onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.from && 'error-input'}
+                    className={errors.senderId && 'error-input'}
                     />
-                    {errors.from && <p className="error-text">{errors.from}</p>}
+                    {errors.senderId && <p className="error-text">{errors.senderId}</p>}
             </label>
             <br></br>
             <label> 
                 To:
                 <br></br>
                 <input
-                    name="to"
+                    name="receiverId"
                     type="text"
-                    value={values.to}
-                    autoComplete="off"
+                    value={values.receiverId}
                     onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.to && 'error-input'}
+                    className={errors.receiverId && 'error-input'}
                     />
-                    {errors.to && <p className="error-text">{errors.to}</p>}
+                    {errors.receiverId && <p className="error-text">{errors.receiverId}</p>}
             </label>
             <br></br>
             <label> 
@@ -54,9 +51,7 @@ export function PostForm() {
                     name="image"
                     type="text"
                     value={values.image}
-                    autoComplete="off"
                     onChange={handleChange}
-                    onBlur={handleBlur}
                     className={errors.image && 'error-input'}
                     />
                     {errors.image && <p className="error-text">{errors.image}</p>}
@@ -70,7 +65,6 @@ export function PostForm() {
                     type="text"
                     value={values.message}
                     onChange={handleChange}
-                    onBlur={handleBlur}
                     className={errors.message && 'error-input'}
                     />
                     {errors.message && <p className="error-text">{errors.message}</p>}
