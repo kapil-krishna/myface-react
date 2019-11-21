@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <div>
-      <p className="nav-title"><img src={crazy} className ="nav-logo"/>MyFace</p>
+      <p className="nav-title"><img src={crazy} className ="nav-logo" alt="my-face-logo"/>MyFace</p>
         <nav>
             <ul>
             <li>

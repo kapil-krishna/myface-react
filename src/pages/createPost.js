@@ -6,6 +6,8 @@ import {ValidatePostFields} from '../hooks/ValidateFields';
 const INITIAL_STATE = {
     from: "",
     to: "",
+    image: "",
+    message: "",
 }
 
 export function PostForm() {

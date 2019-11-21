@@ -23,7 +23,7 @@ export function AllUsers() {
             {users.map(user =>
             <li>
                 <div>{user.username}</div> 
-                <div>{user.profileImage}</div> 
+                <div><img src={user.profileImage} alt="profile" /></div> 
                 <div>{user.firstName + ' ' + user.lastName}</div> 
             </li>)}
         </ul>

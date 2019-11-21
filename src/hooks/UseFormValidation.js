@@ -25,18 +25,30 @@ export function UseFormValidation(initialState, validate) {
         })
     }
 
-    function handleBlur() {
-        const validationErrors = validate(values);
-        setErrors(validationErrors);
-    }
-
     function handleSubmit(event) {
         event.preventDefault();
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        fetch()
+        const form = event.target;
+        const formData = new FormData(form);     
+        fetchData(formData)
+            .then(() => setSubmitting(false));
     }
 
-    return {handleSubmit, handleChange, values, handleBlur, errors, isSubmitting}
+    async function fetchData(formData) {
+        var address = ""
+        if (values.hasOwnProperty("username")) {
+            address = "http://localhost:8080/api/users/create"
+        }
+        if (values.hasOwnProperty("message")) {
+            address = "http://localhost:8080/api/posts/create"
+        }
+        const response = await fetch(address, {
+                    method: 'post', body: formData
+            });
+        console.log(response);
+    }
+
+    return {handleSubmit, handleChange, values, errors, isSubmitting}
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import smiley from './smiley.png';
 import crazy from '../resources/images/crazy.png';
 
 function HomePage() {

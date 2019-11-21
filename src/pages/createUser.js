@@ -17,6 +17,7 @@ export function UserForm() {
 
     return (
         <div className="PostForm">
+            {isSubmitting && <div>Is Submitting</div>}
             <h1>Create a new user</h1>
         <form onSubmit={handleSubmit}>
             <label> 
