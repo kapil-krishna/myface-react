@@ -11,13 +11,27 @@ const INITIAL_STATE = {
 }
 
 export function PostForm() {
-    const {handleSubmit, handleChange, values, errors, isSubmitting} = UseFormValidation(INITIAL_STATE, ValidatePostFields);
+    const {getUsernames, handleSubmit, handleChange, values, errors, isSubmitting} = UseFormValidation(INITIAL_STATE, ValidatePostFields);
 
     return (
         <div className="PostForm">
         {isSubmitting && <div>Is Submitting</div>}
             <h1>Create a post</h1>
         <form onSubmit={handleSubmit}>
+            <label> 
+                From-User
+                <br></br>
+                <input
+                    name="senderUsername"
+                    type="text"
+                    // values={getUsernames.username}
+                    // getOptionLabel={option => option.username}
+                    onChange={handleChange, getUsernames}
+                    className={errors.senderId && 'error-input'}
+                    />
+                    {errors.senderId && <p className="error-text">{errors.senderId}</p>}
+            </label>
+            <br></br>
             <label> 
                 From:
                 <br></br>
